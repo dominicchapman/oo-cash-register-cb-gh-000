@@ -5,7 +5,7 @@ class CashRegister
   # CashRegister ::new optionally takes an employee discount on initialization
   def initialize(employee_discount = 0)
     @total = 0
-    @employee_discount = (employee_discount / 100)
+    @employee_discount = (employee_discount.to_f / 100)
   end
 
   # CashRegister #total returns the current total
@@ -26,7 +26,7 @@ class CashRegister
   # CashRegister #apply_discount the cash register was initialized with an employee discount reduces the total
   # CashRegister #apply_discount the cash register was not initialized with an employee discount returns a string error message that there is no discount to apply
   def apply_discount
-    discounted_total = @total * @employee_discount
+    @total = @total - (@total * @employee_discount)
   end
 
 end
