@@ -21,4 +21,11 @@ class CashRegister
     new_total = @total += (price * quantity)
   end
 
+  # CashRegister #apply_discount the cash register was initialized with an employee discount applies the discount to the total price
+  # CashRegister #apply_discount the cash register was initialized with an employee discount returns success message with updated total
+  # CashRegister #apply_discount the cash register was initialized with an employee discount reduces the total
+  def apply_discount
+    discounted_total = @total *= @employee_discount
+  end
+
 end
