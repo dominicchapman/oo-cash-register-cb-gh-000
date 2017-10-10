@@ -27,8 +27,12 @@ class CashRegister
   # CashRegister #apply_discount the cash register was not initialized with an employee discount returns a string error message that there is no discount to apply
   def apply_discount
     discounted_total = @total - (@total * @employee_discount)
-    @total = discounted_total
-    "After the discount, the total comes to $#{discounted_total.to_i}."
+    if discounted_total == @total
+      "There is no discount to apply."
+    else
+      @total = discounted_total
+      "After the discount, the total comes to $#{discounted_total.to_i}."
+    end
   end
 
 end
