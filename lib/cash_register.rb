@@ -43,7 +43,7 @@ class CashRegister
 
   # CashRegister #items returns an array containing all items that have been added
   def items
-    
+    @@items
   end
 
 end
