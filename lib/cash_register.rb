@@ -43,8 +43,9 @@ class CashRegister
     end
   end
 
-  # def void_last_transaction
-  #   @total = @total - @last_transaction
-  # end
+  # CashRegister #void_last_transaction subtracts the last transaction from the total
+  def void_last_transaction
+    @total = @total - @last_transaction
+  end
 
 end
