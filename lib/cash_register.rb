@@ -9,9 +9,9 @@ class CashRegister
 
   # CashRegister ::new sets an instance variable @total on initialization to zero
   # CashRegister ::new optionally takes an employee discount on initialization
-  def initialize(employee_discount = 0)
+  def initialize(discount = 0)
     @total = 0
-    @employee_discount = employee_discount
+    @discount = discount
     @items = []
   end
 
@@ -34,7 +34,7 @@ class CashRegister
   # CashRegister #apply_discount the cash register was initialized with an employee discount reduces the total
   # CashRegister #apply_discount the cash register was not initialized with an employee discount returns a string error message that there is no discount to apply
   def apply_discount
-    discounted_total = (@total * ((100.0 - @employee_discount.to_f)/100)).to_i
+    discounted_total = (@total * ((100.0 - @discount.to_f)/100)).to_i
     if discounted_total == @total
       "There is no discount to apply."
     else
