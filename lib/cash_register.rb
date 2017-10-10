@@ -12,6 +12,7 @@ class CashRegister
   def initialize(employee_discount = 0)
     @total = 0
     @employee_discount = employee_discount
+    @items = []
   end
 
   # CashRegister #add_item accepts a title and a price and increases the total
@@ -22,7 +23,7 @@ class CashRegister
     @total += (price * quantity)
 
     quantity.times do
-      @@items << title
+      items << title
     end
 
     self.last_transaction = (price * quantity)
