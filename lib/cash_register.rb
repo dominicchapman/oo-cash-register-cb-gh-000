@@ -14,9 +14,11 @@ class CashRegister
   end
 
   # CashRegister #add_item accepts a title and a price and increases the total
-  def add_item(title, price)
+  # CashRegister #add_item also accepts an optional quantity
+  # CashRegister #add_item doesn't forget about the previous total
+  def add_item(title, price, quantity = 1)
     @title = title
-    @total += price
+    new_total = @total += (price * quantity)
   end
 
 end
