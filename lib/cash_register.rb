@@ -12,7 +12,7 @@ class CashRegister
 
   # CashRegister #total returns the current total
   def total
-    @total.to_i
+    @total
   end
 
   # CashRegister #add_item accepts a title and a price and increases the total
