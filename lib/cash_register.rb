@@ -1,7 +1,9 @@
 
 class CashRegister
 
-  attr_accessor :last_transaction
+  # CashRegister #total returns the current total
+  # CashRegister #items returns an array containing all items that have been added
+  attr_accessor :items, :discount, :total, :last_transaction
 
   @@items = []
 
@@ -10,11 +12,6 @@ class CashRegister
   def initialize(employee_discount = 0)
     @total = 0
     @employee_discount = employee_discount
-  end
-
-  # CashRegister #total returns the current total
-  def total
-    @total
   end
 
   # CashRegister #add_item accepts a title and a price and increases the total
@@ -45,10 +42,6 @@ class CashRegister
     end
   end
 
-  # CashRegister #items returns an array containing all items that have been added
-  def items
-    @@items
-  end
 
   def void_last_transaction
     @total = @total - @last_transaction
