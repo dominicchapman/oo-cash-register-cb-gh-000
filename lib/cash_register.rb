@@ -1,6 +1,8 @@
 
 class CashRegister
 
+  @@items = []
+
   # CashRegister ::new sets an instance variable @total on initialization to zero
   # CashRegister ::new optionally takes an employee discount on initialization
   def initialize(employee_discount = 0)
@@ -19,6 +21,10 @@ class CashRegister
   def add_item(title, price, quantity = 1)
     @title = title
     @total += (price * quantity)
+
+    quantity.times do
+      @@items << title
+    end
   end
 
   # CashRegister #apply_discount the cash register was initialized with an employee discount applies the discount to the total price
@@ -33,6 +39,11 @@ class CashRegister
       @total = discounted_total
       "After the discount, the total comes to $#{discounted_total.to_i}."
     end
+  end
+
+  # CashRegister #items returns an array containing all items that have been added
+  def items
+    
   end
 
 end
