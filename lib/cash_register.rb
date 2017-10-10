@@ -8,6 +8,7 @@ class CashRegister
     @employee_discount = employee_discount
   end
 
+  # CashRegister #total returns the current total
   def total
     @total
   end
