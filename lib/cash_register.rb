@@ -18,7 +18,7 @@ class CashRegister
   # CashRegister #add_item doesn't forget about the previous total
   def add_item(title, price, quantity = 1)
     @title = title
-    new_total = @total += (price * quantity)
+    @total += (price * quantity)
   end
 
   # CashRegister #apply_discount the cash register was initialized with an employee discount applies the discount to the total price
