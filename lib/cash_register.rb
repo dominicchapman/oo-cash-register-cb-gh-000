@@ -1,6 +1,8 @@
 
 class CashRegister
 
+  attr_accessor :last_transaction
+
   @@items = []
 
   # CashRegister ::new sets an instance variable @total on initialization to zero
@@ -25,6 +27,8 @@ class CashRegister
     quantity.times do
       @@items << title
     end
+
+    self.last_transaction = (price * quantity)
   end
 
   # CashRegister #apply_discount the cash register was initialized with an employee discount applies the discount to the total price
@@ -44,6 +48,10 @@ class CashRegister
   # CashRegister #items returns an array containing all items that have been added
   def items
     @@items
+  end
+
+  def void_last_transaction
+    self.total = self.total - self.last_transaction
   end
 
 end
